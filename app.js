@@ -1,22 +1,50 @@
-// app.js
-
-// Smooth scrolling for anchor links
 document.addEventListener("DOMContentLoaded", function () {
-    const smoothScrollLinks = document.querySelectorAll('a[href^="#"]');
-    
-    smoothScrollLinks.forEach((link) => {
+    // Navigation toggle
+    const navToggle = document.querySelector(".btn");
+    const navMenu = document.querySelector("ul");
+
+    navToggle.addEventListener("click", function () {
+        navMenu.classList.toggle("show");
+    });
+
+    // Smooth scrolling for navigation links
+    const navLinks = document.querySelectorAll("nav ul li a");
+
+    navLinks.forEach(function (link) {
         link.addEventListener("click", function (e) {
             e.preventDefault();
 
             const targetId = this.getAttribute("href").substring(1);
             const targetElement = document.getElementById(targetId);
 
-            if (targetElement) {
-                window.scrollTo({
-                    top: targetElement.offsetTop,
-                    behavior: "smooth"
-                });
-            }
+            window.scrollTo({
+                top: targetElement.offsetTop - 50,
+                behavior: "smooth",
+            });
         });
+    });
+
+    // Newsletter form submission
+    const newsletterForm = document.querySelector(".newslatter form");
+
+    newsletterForm.addEventListener("submit", function (e) {
+        e.preventDefault();
+
+        const emailInput = document.getElementById("mail");
+        const userEmail = emailInput.value;
+
+        // You can perform additional actions here, like sending the email to a server
+        console.log("Subscribed with email:", userEmail);
+
+        // Clear the input field
+        emailInput.value = "";
+    });
+
+    // "Let's Talk" button action
+    const talkButton = document.querySelector(".about button");
+
+    talkButton.addEventListener("click", function () {
+        // You can add your custom action when the button is clicked
+        alert("Let's talk!");
     });
 });
