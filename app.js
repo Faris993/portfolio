@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", function () {
     // Navigation toggle
     const navToggle = document.querySelector(".btn");
-    const navMenu = document.querySelector("ul");
+    const navMenu = document.querySelector("nav ul");
 
     navToggle.addEventListener("click", function () {
         navMenu.classList.toggle("show");
@@ -21,6 +21,9 @@ document.addEventListener("DOMContentLoaded", function () {
                 top: targetElement.offsetTop - 50,
                 behavior: "smooth",
             });
+
+            // Close the navigation menu on mobile after clicking a link
+            navMenu.classList.remove("show");
         });
     });
 
