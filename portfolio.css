@@ -302,3 +302,39 @@ footer p:nth-child(2){
     font-size: 14px;
     
 }
+
+@media only screen and (max-width: 600px) {
+    nav {
+        padding-left: 5%;
+        padding-right: 5%;
+    }
+
+    .content {
+        left: 5%;
+    }
+
+    .about img {
+        width: 100%;
+    }
+
+    .main {
+        flex-direction: column;
+    }
+
+    .title h2 {
+        width: 90%;
+    }
+
+    .card {
+        width: 100%;
+        margin: 15px 0;
+    }
+
+    .contact-me .button-two {
+        padding: 10px 20px;
+    }
+
+    footer p:nth-child(2) {
+        width: 90%;
+    }
+} 
